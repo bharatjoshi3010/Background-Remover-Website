@@ -1,5 +1,6 @@
 // npm install
 // npm install react-router-dom react-toastify 
+//npm install @clerk/clerk-react
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
