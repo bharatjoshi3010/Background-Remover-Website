@@ -12,3 +12,5 @@ const userSchema = new mongoose.Schem({
 const userModel = mongoose.models.user || mongoose.model("user", userSchema)
 
 export default userModel;
+
+//when we login using clerk, the clerk save our data and we can save this data to our backend using clerk webhooks
