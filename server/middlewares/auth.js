@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 const authUser = async (req, res, next) => {
 
     try {
-
+        console.log(req.headers)
         const {token} = req.headers
 
         if(!token){
@@ -12,7 +12,8 @@ const authUser = async (req, res, next) => {
         }
 
         const token_decode = jwt.decode(token)
-        req.body.clerkId = token_decode.clerkId
+        req.clerkId = token_decode.clerkId
+        
         next()
         
     } catch (error) {

@@ -1,5 +1,5 @@
 // npm install
-// npm install react-router-dom react-toastify 
+// npm install react-router-dom react-toastify axios
 //npm install @clerk/clerk-react
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
@@ -8,10 +8,13 @@ import Result from './pages/Result'
 import BuyCredit from './pages/BuyCredit'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
+import { ToastContainer, toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 const App = () => {
   return (
     <div className='min-h-screen bg-slate-50'>
+      <ToastContainer position='bottom-right' />
       <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>} />

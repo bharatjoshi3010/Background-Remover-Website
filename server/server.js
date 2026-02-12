@@ -15,6 +15,7 @@ app.use(express.json())
 app.use(cors())
 await connectDB()
 
+
 //API routes
 app.get('/',(req, res)=> res.send("API working"))
 app.use('/api/user', userRouter)
