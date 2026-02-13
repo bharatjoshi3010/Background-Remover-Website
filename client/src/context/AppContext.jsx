@@ -81,7 +81,8 @@ const AppContextProvider = (props) => {
         loadCreditsData,
         backendUrl,
         image, setImage,
-        removeBg
+        removeBg,
+        resultImage, setResultImage,
     }
 
     return (
