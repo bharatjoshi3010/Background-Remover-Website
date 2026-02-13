@@ -1,7 +1,12 @@
 import React from 'react'
 import { assets } from '../assets/assets'
+import { useContext } from 'react'
+import { AppContext } from '../context/AppContext'
 
 const Header = () => {
+
+    const {removeBg} = useContext(AppContext)
+
     return (
         <div className='flex items-center justify-between max-sm:flex-col-reverse gap-y-10 px-4 mt-10 lg:px-44 sm:mt-20 '>
             {/*-------------- left side -------- */}
@@ -11,7 +16,8 @@ const Header = () => {
                 </h1>
                 <p className='my-6 text-[15px] text-grey-500'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt nihil praesentium veniam? Reprehenderit, accusamus. Vel repudiandae <br className='max-sm:hidden' /> recusandae earum ducimus eveniet illo laborum, suscipit praesentium harum perferendis aspernatur officiis a asperiores perspiciatis, veniam impedit autem.</p>
                 <div>
-                    <input type="file" name='' id="upload1" hidden />
+                    <input onChange={e => removeBg(e.target.files[0])} type="file" accept='image/*' id="upload1" hidden />
+                    {/* by this 'image/*' we can select only images  */}
                     <label className='inline-flex gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 m-auto hover:scale-105 transition-all duration-700 ' htmlFor="upload1">
                         <img width={20} src={assets.upload_btn_icon} alt="" />
                         <p className='text-white text-sm'>Upload your image</p>

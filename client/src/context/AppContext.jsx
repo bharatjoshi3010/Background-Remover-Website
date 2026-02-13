@@ -9,6 +9,7 @@ export const AppContext = createContext()
 const AppContextProvider = (props) => {
 
     const [credit, setCredit] = useState(false);
+    const [image, setImage] = useState(false);
 
     const backendUrl = import.meta.env.VITE_BACKEND_URL
     const { getToken } = useAuth()
@@ -29,10 +30,23 @@ const AppContextProvider = (props) => {
         }
     }
 
+    //function for removing the bg from the image
+
+    const removeBg = async (image) => {
+        try {
+            
+        } catch (error) {
+            console.log(error)
+            toast.error(error.message)
+        }
+    }
+
     const value = {
         credit, setCredit,
         loadCreditsData,
-        backendUrl
+        backendUrl,
+        image, setImage,
+        removeBg
     }
 
     return (
